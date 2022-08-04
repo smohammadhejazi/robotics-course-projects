@@ -1,0 +1,10 @@
+<launch>
+    <node pkg="project" type="navigate.py" name="navigate" output="screen">
+    </node>
+    
+    <include file="$(find project)/launch/world.launch">
+        <arg name="x_pos" value="0.0"/>
+        <arg name="y_pos" value="8.0"/>
+        <arg name="z_pos" value="0.0"/>
+    </include>
+</launch>

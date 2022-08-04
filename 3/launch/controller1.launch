@@ -1,0 +1,10 @@
+<launch>
+    <node pkg="hw3_1" type="distance.py" name="distance" output="screen">
+    </node>
+    
+    <include file="$(find hw3_1)/launch/world.launch">
+        <arg name="x_pos" value="0.0"/>
+        <arg name="y_pos" value="0.0"/>
+        <arg name="z_pos" value="0.0"/>
+    </include>
+</launch>

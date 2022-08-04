@@ -1,0 +1,26 @@
+<launch>
+    <node pkg="hw2_1" type="controller.py" name="controller" output="screen">
+        <param name="linear_speed" value="0.2" />
+        <param name="angular_speed" value="0.2"/>
+        <param name="goal_angle" value="95"/>
+        <param name="distance_epsilon" value="0.01"/>
+        <param name="angle_epsilon" value="0.01"/>
+        <param name="length" value="6.0"/>
+        <param name="width" value="4.0"/>
+    </node>
+
+    <node pkg="hw2_1" type="distance_vector.py" name="distance_vector"></node>
+
+    <node pkg="hw2_1" type="monitor.py" name="monitor" output="screen">
+        <param name="length" value="6.0"/>
+        <param name="width" value="4.0"/>
+    </node>
+
+    <include file="$(find hw2_1)/launch/empty_world.launch">
+        <arg name="x_pos" value="0.0"/>
+        <arg name="y_pos" value="0.0"/>
+        <arg name="z_pos" value="0.0"/>
+    </include>
+
+    <include file="$(find turtlebot_rviz_launchers)/launch/view_robot.launch"/>
+</launch>

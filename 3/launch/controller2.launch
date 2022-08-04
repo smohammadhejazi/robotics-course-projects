@@ -1,0 +1,13 @@
+<launch>
+    <node pkg="hw3_1" type="distance_service.py" name="distance_service" output="screen">
+    </node>
+
+    <node pkg="hw3_1" type="distance_from_srv.py" name="distance_from_srv" output="screen">
+    </node>
+    
+    <include file="$(find hw3_1)/launch/world.launch">
+        <arg name="x_pos" value="0.0"/>
+        <arg name="y_pos" value="0.0"/>
+        <arg name="z_pos" value="0.0"/>
+    </include>
+</launch>
